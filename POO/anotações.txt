@@ -1,0 +1,59 @@
+///////////////////////////////// produto.js /////////////////////////////////
+
+// cria uma classe
+class Produto{
+
+    // propriedades que vão ser usadas para criar um produto
+    nome;
+    estoque;
+    preco;
+    categoria;
+
+    // Constructor é um metodo que recebe os parametros (pnome, pestoque....). Constructor serve pra construir/iniciar um objeto. sem ele as propriedades ficariam indefinidas (nome e preco).
+    // Parametros (pNome e pPreco) permitem passar valores diferentes para cada objeto, sem eles todos produtos teriam as propriedades fixas ou vazias. É uma variavel temporaria que recebe o valor passado quando criamos o objeto. Quando criamos o objeto, é colocado dentro dele (pNome, por exemplo), mas como ele só existe dentro de cosntructor, não usamos pNome fora dele, e só o nome. O pNome alimenta nome pra depois só usarmos nome e o pNome é usado exclusivamente pra criar um objeto
+    constructor(pNome, pEstoque, pPreco, pCategoria){
+        this.nome = pNome;
+        this.estoque = pEstoque;
+        this.preco = pPreco;
+        this.categoria = pCategoria;
+    }
+}
+
+// Métodos são funções definidas dentro de uma classe que permitem que os objetos executem ações/operações usando suas proppriedades.
+// Criamos o metodo na nossa classe Produto e chamamos ela na classe App com o nome do objeto . nome do metodo (nomeObj.nomeMetodo + produto1.verificarEstoque)
+    
+    
+    verificarEstoque(){
+        console.log("Estoque do produto " + this.nome + " é: " + this.estoque);
+    }
+
+    //Método - Padrão de nomenclatura Camel Case
+    aplicarDesconto(percentual){
+        return this.preco - (this.preco * percentual);
+    }
+
+
+
+
+
+
+
+///////////////////////////////// app.js /////////////////////////////////
+
+
+// isso é um objeto... criando uma nova variavel que possua um novo produto usando a classe Produto, com as mesmas propriedades
+const produto1 = new Produto("Guitarra", 1500.00, 10, "Instrumwentos Musicais");
+
+
+
+
+
+
+
+
+
+
+///////////////////////////////// Como rodar /////////////////////////////////
+
+ctrl + j
+node app.js;
